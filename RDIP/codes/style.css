@@ -47,11 +47,11 @@
     width: 900px;
     top: 59%;
     left: 70%;
-    transform: translate(-50%, -50%);	    transform: translate(-50%, -50%);
-    font-size: 20px;	    font-size: 20px;
-    font-style: italic;	    font-style: italic;
-    color: blue;	    color: blue;
-    font-family:  sans-serif;	    font-family:  sans-serif;
+    transform: translate(-50%, -50%);	   
+    font-size: 20px;	    
+    font-style: italic;	   
+    color: blue;	    ;
+    font-family:  sans-serif;	    
 
 
 }
@@ -78,4 +78,15 @@
     font-size: 20px;
     color: black;
 
-} 	} 
+} 
+#s7{
+    
+   position: absolute;
+    width: 900px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: black;	
+
+} 

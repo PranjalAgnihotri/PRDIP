@@ -17,7 +17,8 @@ var hin = [["राम और श्याम बाजार गयें","र
 ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
 ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"]];
 
-
+var cc;
+var bc;
 
 function shuffle(jumbled){
 	var jumble = jumbled.split(" ");
@@ -40,6 +41,12 @@ function fs(id,value){
 	 document.getElementById("s5").innerHTML = finalsentence;
 	document.getElementById(id).style.display = "none";
 	document.getElementById("s6").innerHTML = "<center><button id='reform' onclick='rs()'>Re-form the sentence</button></center>"
+          cc++;
+          if(bc==cc)
+         {
+              ocument.getElementById("s7").innerHTML = "<center><button id='correctness'  onclick='cs()'>Check the correctness</button></center>"
+    }
+    
 }
  functiom rs()
 {
@@ -48,6 +55,7 @@ function fs(id,value){
 	document.getElementById("reform").innerHTML = "";
 	document.getElementById("s4").innerHTML = "";
 }
+
 let selection = document.getElementById("choose");
 function run(){
 
@@ -61,6 +69,9 @@ if (selection.value === "english"){
 
 		var jumbled = eng[r][0];
 		var j = shuffle(jumbled);
+                    
+                      bc=0;
+                      cc=0;
 		
 		var bt ="";
 		var bft = "";
@@ -68,6 +79,7 @@ if (selection.value === "english"){
 			val = j[i];
 			bt = " <button id='btn"+i+"' onclick='fs(this.id,this.value)' value=' "+val+" '>"+val+"  </button>  ";
 			fbt +=bt;
+                                bc++;
            
 		}
 		s3.innerHTML = fbt.trim();              
@@ -81,6 +93,9 @@ else if (selection.value === "hindi"){
 		var jumbled = hin[r][0];
 		var j = shuffle(jumbled);
 		
+                      bc=0;
+                      cc=0;
+                     
 		var bt ="";
 		var fbt = "";
 		for(i=0;i<=j.length-1;i++){
@@ -88,10 +103,10 @@ else if (selection.value === "hindi"){
 			bt = " <button id='btn"+i+"' onclick='fs(this.id,this.value)' value=' "+val+" '>"+val+"  </button>  ";
 
 			fbt +=bt;
+                                bc++;
 		}
 		s3.innerHTML = fbt.trim();
               
-
                 
 }
 else if(slection.value === ("Select Langage");
