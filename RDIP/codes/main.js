@@ -39,9 +39,25 @@ function fs(id,value){
 	finalsentence += value + " ";
 	 document.getElementById("s5").innerHTML = finalsentence;
 	document.getElementById(id).style.display = "none";
-	document.getElementById("s6").innerHTML = "<center><button id='rb' onclick='rs()'>Re-form the sentence</button></center>"
+	document.getElementById("s6").innerHTML = "<center><button id='reform' onclick='rs()'>Re-form the sentence</button></center>"
 }
- 
+ functiom rs()
+{
+              finalsentence = "";
+	document.getElementById("s5").innerHTML = finalsentence;
+	document.getElementById("reform").innerHTML = "";
+	document.getElementById("s4").innerHTML = "";
+}
+let selection = document.getElementById("choose");
+function run(){
+
+if (selection.value === "english"){
+
+                document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
+
+                document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
+            
+                     var r = Math.floor(Math.random()* eng.length);
 
 		var jumbled = eng[r][0];
 		var j = shuffle(jumbled);
@@ -54,11 +70,13 @@ function fs(id,value){
 			fbt +=bt;
            
 		}
-		s3.innerHTML = fbt.trim();
-            
-
-                
+		s3.innerHTML = fbt.trim();              
 }
+else if (selection.value === "hindi"){
+                document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
+                document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
+
+              var r = Math.floor(Math.random()* hin.length);
 
 		var jumbled = hin[r][0];
 		var j = shuffle(jumbled);
