@@ -13,34 +13,37 @@
     position: absolute;
     width: 900px;
     top: 10%;
-    left: 50%;
+    left: 52%;
   transform: translate(-50%, -50%);
     font-size: 23px;
     color: blue;
     font-family:  sans-serif;
 }
+
 #s2{
     position: absolute;
     width: 900px;
     top: 15%;
-    left: 68%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    font-style: italic;
-    color: blue;
-    font-family:  sans-serif;
-} 
-#s3{
-     position: absolute;
-    width: 900px;
-    top: 30%;
     left: 70%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     font-style: italic;
     color: blue;
     font-family:  sans-serif;
+} 
 
+#s3{
+      position: absolute;
+    width: 900px;
+   
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    font-style: italic;
+    color: black;
+    font-family:  sans-serif;
+     
 } 
 #s4{
      position: absolute;
@@ -59,7 +62,7 @@
      position: absolute;
     width: 900px;
     top: 40%;
-    left: 70%;
+    left: 72%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     font-style: normal;
@@ -73,7 +76,7 @@
    position: absolute;
     width: 900px;
     top: 45%;
-    left: 50%;
+    left: 72%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     color: black;
@@ -83,7 +86,7 @@
     
    position: absolute;
     width: 900px;
-    top: 50%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -95,12 +98,12 @@
     
    position: absolute;
     width: 900px;
-    top: 54%;
+    top: 56%;
     left: 80%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     color: green;
-    font-style: italic;
+    
      
 }
 
@@ -109,7 +112,7 @@
     
    position: absolute;
     width: 900px;
-    top: 54%;
+    top: 58%;
     left: 80%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -123,11 +126,11 @@
     
    position: absolute;
     width: 900px;
-    top: 60%;
+    top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
-    color: forestgreen;
+    color: black;
     font-style: italic;
      
 }
@@ -136,11 +139,11 @@
     
    position: absolute;
     width: 900px;
-    top: 75%;
+    top: 78%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
-    color: blueviolet;
+    font-size: 30px;
+    color: darkblue;
     font-style: italic;
      
 }
