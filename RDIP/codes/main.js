@@ -22,7 +22,7 @@ var newArray= ["राम और श्याम बाजार गयें","
 //shuffling words of the sentence
 
 var cc;
-var bc;
+var bc,r;
 var result="";
 let selection = document.getElementId("choose");
 
@@ -44,9 +44,11 @@ function cs(){
      document.getElementById("s10").innerHTML = "<center><button id='showansbtn' onclick='gs()'>Get Correct Sentence</button></center>"
     
 }
+
+//getting correct ans
 function gs(){
     
-    answers="";
+    result="";
     document.getElementById("correctans").innerHTML = ""
     var totalresult = 0;
 	
@@ -69,10 +71,13 @@ if (selection.value=='english'){
    
 }
 
+//hiding
 function hs(){
 	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Correct Sentence</button></center>"
 	document.getElementById("correctans").innerHTML = "";
 }
+
+//toggle
 function toggle(){
     while(document.getElementById("correctans").innerHTML ==""){
 	
@@ -112,10 +117,11 @@ function fs(id,value){
 //reset option
 function rs(){
 	
-	finalsentence = "";
-	document.getElementById("s5").innerHTML = finalsentence;
-	document.getElementById("reform").innerHTML = "";
+	
+	document.getElementById("s5").innerHTML = "";
+	document.getElementById("s6").innerHTML = "";
 	document.getElementById("s4").innerHTML = "";
+           cc=0;
 }
 
 function run(){
@@ -131,7 +137,7 @@ if (selection.value === "english"){
 		var jumbled = eng[r][0];
 		var j = shuffle(jumbled);
 		bc=0;
-    cc=0;
+                      cc=0;
 		var bt ="";
 		var fbt = "";
 		for(i=0;i<=j.length-1;i++){
@@ -180,108 +186,4 @@ else if (selection.value === "Select Language"){
 }
 
 
-var cc;
-var bc;
 
-function shuffle(jumbled){
-	var jumble = jumbled.split(" ");
-	var i = jumble.length, temp, randomi;
-	while(0!==i){
-		randomi = Math.floor(Math.random()*i);
-		i -= 1;
-		temp = jumble[i];
-		jumble[i] = jumble[randomi];
-		jumble[randomi] = temp;
-	}
-	return jumble;
-}
-
-var finalsentence ="";
-function fs(id,value){
-
-	document.getElementById("s4").innerHTML = "Formed Sentence (after selecting words):";
-	finalsentence += value + " ";
-	 document.getElementById("s5").innerHTML = finalsentence;
-	document.getElementById(id).style.display = "none";
-	document.getElementById("s6").innerHTML = "<center><button id='reform' onclick='rs()'>Re-form the sentence</button></center>"
-          cc++;
-          if(bc==cc)
-         {
-              ocument.getElementById("s7").innerHTML = "<center><button id='correctness'  onclick='cs()'>Check the correctness</button></center>"
-    }
-    
-}
- functiom rs()
-{
-              finalsentence = "";
-	document.getElementById("s5").innerHTML = finalsentence;
-	document.getElementById("reform").innerHTML = "";
-	document.getElementById("s4").innerHTML = "";
-}
-
-let selection = document.getElementById("choose");
-function run(){
-
-if (selection.value === "english"){
-
-                document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
-
-                document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
-            
-                     var r = Math.floor(Math.random()* eng.length);
-
-		var jumbled = eng[r][0];
-		var j = shuffle(jumbled);
-                    
-                      bc=0;
-                      cc=0;
-		
-		var bt ="";
-		var bft = "";
-		for(i=0;i<=j.length-1;i++){
-			val = j[i];
-			bt = " <button id='btn"+i+"' onclick='fs(this.id,this.value)' value=' "+val+" '>"+val+"  </button>  ";
-			fbt +=bt;
-                                bc++;
-           
-		}
-		s3.innerHTML = fbt.trim();              
-}
-else if (selection.value === "hindi"){
-                document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
-                document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
-
-              var r = Math.floor(Math.random()* hin.length);
-
-		var jumbled = hin[r][0];
-		var j = shuffle(jumbled);
-		
-                      bc=0;
-                      cc=0;
-                     
-		var bt ="";
-		var fbt = "";
-		for(i=0;i<=j.length-1;i++){
-			val = j[i];
-			bt = " <button id='btn"+i+"' onclick='fs(this.id,this.value)' value=' "+val+" '>"+val+"  </button>  ";
-
-			fbt +=bt;
-                                bc++;
-		}
-		s3.innerHTML = fbt.trim();
-              
-                
-}
-else if(slection.value === ("Select Langage");
-{
-               alert("Choose any language")
-
-                document.getElementById("s2").innerHTML = ""
-                document.getElementById("s1").innerHTML = ""
-                document.getElementById("s3").innerHTML = ""
-                document.getElementById("s4").innerHTML = ""
-                
-                
-            }
-}
-          
