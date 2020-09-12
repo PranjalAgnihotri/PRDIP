@@ -23,6 +23,8 @@ var newArray= ["राम और श्याम बाजार गयें","
 
 var cc;
 var bc;
+var result="";
+let selection = document.getElementId("choose");
 
 //comparing
 function cs(){
@@ -39,8 +41,46 @@ function cs(){
         }
     }
     document.getElementById('s9').innerHTML = "Wrong !!!";
+     document.getElementById("s10").innerHTML = "<center><button id='showansbtn' onclick='gs()'>Get Correct Sentence</button></center>"
     
 }
+function gs(){
+    
+    answers="";
+    document.getElementById("correctans").innerHTML = ""
+    var totalresult = 0;
+	
+if (selection.value=='english'){
+		totalresult = eng[r].length-1;
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hs()'>hide correct answer</button></center>"
+		for(i=0;i<=totalresult;i++){
+			result += "<center>"+eng[r][i]+"<br></center>"
+		}
+		document.getElementById("correctans").innerHTML = result;
+	}
+    else if(x=='hindi'){
+		totalresult = hin[r].length-1;
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hs()'>hide correct answer</button></center>"
+		for(i=0;i<=totalresult;i++){
+			result += "<center>"+hin[r][i]+"<br></center>"
+		}
+		document.getElementById("correctans").innerHTML = result;
+	}
+   
+}
+
+function hs(){
+	document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='toggle()'>Get Correct Sentence</button></center>"
+	document.getElementById("correctans").innerHTML = "";
+}
+function toggle(){
+    while(document.getElementById("correctans").innerHTML ==""){
+	
+		document.getElementById('s10').innerHTML = "<center><button id='showansbtn' onclick='hs()'>hide correct answer</button></center>"
+	}
+}
+
+
 function shuffle(jumbled){
 	var jumble = jumbled.split(" ");
 	var i = jumble.length, temp, randomi;
@@ -78,16 +118,16 @@ function rs(){
 	document.getElementById("s4").innerHTML = "";
 }
 
-
-
-
-let selection = document.getElementById("choose");
 function run(){
 if (selection.value === "english"){
+                
+                result="";
+                 document.getElementById("correctans").innerHTML = ""
+
                 document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
                 document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
             
-var r = Math.floor(Math.random()* eng.length);
+ r = Math.floor(Math.random()* eng.length);
 		var jumbled = eng[r][0];
 		var j = shuffle(jumbled);
 		bc=0;
@@ -106,13 +146,18 @@ var r = Math.floor(Math.random()* eng.length);
                 
 }
 else if (selection.value === "hindi"){
+
+                 result="";
+                 document.getElementById("correctans").innerHTML = ""
+
                 document.getElementById("s2").innerHTML = "(select the buttons in proper order)"
                 document.getElementById("s1").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words"
-              var r = Math.floor(Math.random()* hin.length);
+
+            r = Math.floor(Math.random()* hin.length);
 		var jumbled = hin[r][0];
 		var j = shuffle(jumbled);
 		 bc=0;
-    cc=0;
+                      cc=0;
 		var bt ="";
 		var fbt = "";
 		for(i=0;i<=j.length-1;i++){

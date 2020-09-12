@@ -4,7 +4,7 @@
     width: 200px;
     font-size: 20px;
     position: absolute;
-    top: 20%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -12,7 +12,7 @@
 #s1{
     position: absolute;
     width: 900px;
-    top: 30%;
+    top: 10%;
     left: 50%;
   transform: translate(-50%, -50%);
     font-size: 23px;
@@ -22,7 +22,7 @@
 #s2{
     position: absolute;
     width: 900px;
-    top: 40%;
+    top: 15%;
     left: 68%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -33,7 +33,7 @@
 #s3{
      position: absolute;
     width: 900px;
-    top: 55%;
+    top: 30%;
     left: 70%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -45,7 +45,7 @@
 #s4{
      position: absolute;
     width: 900px;
-    top: 59%;
+    top: 35%;
     left: 70%;
     transform: translate(-50%, -50%);	   
     font-size: 20px;	    
@@ -58,7 +58,7 @@
 #s5{
      position: absolute;
     width: 900px;
-    top: 65%;
+    top: 40%;
     left: 70%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -72,7 +72,7 @@
 
    position: absolute;
     width: 900px;
-    top: 70%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -83,7 +83,7 @@
     
    position: absolute;
     width: 900px;
-    top: 75%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -95,7 +95,7 @@
     
    position: absolute;
     width: 900px;
-    top: 79%;
+    top: 54%;
     left: 80%;
     transform: translate(-50%, -50%);
     font-size: 20px;
@@ -109,11 +109,38 @@
     
    position: absolute;
     width: 900px;
-    top: 79%;
+    top: 54%;
     left: 80%;
     transform: translate(-50%, -50%);
     font-size: 20px;
     color: red;
+    font-style: italic;
+     
+}
+
+#s10{
+     
+    
+   position: absolute;
+    width: 900px;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: forestgreen;
+    font-style: italic;
+     
+}
+#correctans{
+     
+    
+   position: absolute;
+    width: 900px;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: blueviolet;
     font-style: italic;
      
 }
