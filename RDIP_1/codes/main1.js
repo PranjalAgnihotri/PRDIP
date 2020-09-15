@@ -51,6 +51,17 @@ function showCorpus(){
 	}
 }
 
+function c(){
+    
+    document.getElementById('s8').innerHTML="Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types";
+	document.getElementById("s6").innerHTML="";
+          document.getElementById("s5").innerHTML="";
+          document.getElementById("s7").innerHTML="";
+          document.getElementById('s9').innerHTML="#New types:";
+          document.getElementById('s10').innerHTML="<input id='newtype' type=text>";
+}
+
+
 function check(){
 
     var w=para;
@@ -83,9 +94,10 @@ function check(){
 	}
 	if((wc == tokens) && (uc == types)){
 		document.getElementById("s5").innerHTML= "<center><font color='Green' style = 'font-size:20px'>Right answer</font></center>"
-         document.getElementById("s7").innerHTML = "<button  onclick='continue()'>Continue</button>";
+         document.getElementById("s7").innerHTML = "<button  onclick='c()'>Continue</button>";
 	}
-	else{
+	else
+           {
 		document.getElementById("s6").innerHTML = "<center><font color='Red' style = 'font-size:20px'>Wrong answer</font></center>"
 	}
 
