@@ -81,6 +81,7 @@ str=str.replace(/[^a-zA-Z ]/g, "");
     s = new Set(s);
 	s = Array.from(s);
     console.log(s);
+    alert(s.length);
 	
 }
 
