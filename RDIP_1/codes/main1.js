@@ -1,7 +1,5 @@
+//stemmer
 var stemmer = new Snowball('English');
-stemmer.setCurrent('abbreviations');     
-stemmer.stem();
-console.log(stemmer.getCurrent()); 
 
 corpus1=["A mouse was having a very bad time. She could find no food at all. She looked here and there, but there was no food, and she grew very thin. At last the mouse found a basket, full of corn. There was a small hole in the basket, and she crept in. She could just get through the hole. Then she began to eat the corn. Being very hungry, she ate a great deal, and went on eating and eating. She had grown very fat before she felt that she had had enough. When the mouse tried to climb out of the basket, she could not. She was too fat to pass through the hole. 'How shall I climb out?' said the mouse. 'oh, how shall I climb out?' Just then a rat came along, and he heard the mouse. 'Mouse,' said the rat, 'if you want to climb out of the basket, you must wait till you have grown as thin as you were when you went in.'"];
 
@@ -64,6 +62,26 @@ function c(){
           document.getElementById("s7").innerHTML="";
           document.getElementById('s9').innerHTML="#New types:";
           document.getElementById('s10').innerHTML="<input id='newtype' type=text>";
+          document.getElementById("s11").innerHTML = "<button onclick='newtypes()'>Submit</button>";
+    
+}
+
+function newtypes(){
+    var str =para;
+str=str.replace(/[^a-zA-Z ]/g, "");
+    str= str.toLowerCase();
+	str = str.split(" ");
+	var s=[];
+	for(var i=0; i<str.length;i++){
+		stemmer.setCurrent(str[i]);     
+		stemmer.stem();
+		s[i] = stemmer.getCurrent();
+	}
+    
+    s = new Set(s);
+	s = Array.from(s);
+    console.log(s);
+	
 }
 
 
