@@ -66,6 +66,8 @@ function c(){
     
 }
 
+//stemming
+
 function newtypes(){
     var str =para;
 str=str.replace(/[^a-zA-Z ]/g, "");
@@ -83,14 +85,19 @@ str=str.replace(/[^a-zA-Z ]/g, "");
     console.log(s);
 
     let val = document.getElementById("newtype").value;
+
     //comparisons
     
     if(val == s.length){
+      //displaying answer
         document.getElementById("s12").innerHTML = "<center><font color='Green' style = 'font-size:20px'>Right answer</font></center>"
          document.getElementById("newtype").style.backgroundColor =  "Green"
         
     }
     else{
+
+    //displaying answer
+
         document.getElementById("s12").innerHTML ="<center><font color='Red' style = 'font-size:20px'>Wrong answer</font></center>"
         document.getElementById("newtype").style.backgroundColor = "Red"
     }
