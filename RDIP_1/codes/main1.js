@@ -20,7 +20,16 @@ var para="";
 function showCorpus(){
 	
 	if(selection.value ==='Corpus1'){
+                     document.getElementById("s5").innerHTML="";
+                    document.getElementById("s6").innerHTML="";
+                    document.getElementById("s7").innerHTML="";
+                    document.getElementById("s8").innerHTML="";
+                    document.getElementById("s9").innerHTML="";
+                    document.getElementById("s10").innerHTML="";
+                   document.getElementById("s11").innerHTML="";
+                    document.getElementById("s12").innerHTML="";
 		document.getElementById("s1").innerHTML=corpus1;
+		
         document.getElementById("s2").innerHTML="Enter the number of tokens and types for the above corpus:"
 	document.getElementById("s3").innerHTML="<table border='1' ><tr><td>Tokens</td><td><input type ='number' id='token'></td></tr><tr><td>Types</td><td><input type ='number' id='type'></td></tr></table>";
 
@@ -32,6 +41,15 @@ function showCorpus(){
 
 	else if(selection.value ==='Corpus2')
 {
+                      else if(selection.value ==='Corpus2'){
+        document.getElementById("s5").innerHTML="";
+        document.getElementById("s6").innerHTML="";
+        document.getElementById("s7").innerHTML="";
+         document.getElementById("s8").innerHTML="";
+    document.getElementById("s9").innerHTML="";
+        document.getElementById("s10").innerHTML="";
+        document.getElementById("s11").innerHTML="";
+        document.getElementById("s12").innerHTML="";
 		document.getElementById("s1").innerHTML=corpus2;
         document.getElementById("s2").innerHTML="Enter the number of tokens and types for the above corpus:"
 	document.getElementById("s3").innerHTML="<table border='1' ><tr><td>Tokens</td><td><input type ='number' id='token'></td></tr><tr><td>Types</td><td><input type ='number' id='type'></td></tr></table>";
@@ -44,6 +62,14 @@ function showCorpus(){
 
 	else if(selection.value ==='Corpus3')
 {
+           document.getElementById("s5").innerHTML="";
+        document.getElementById("s6").innerHTML="";
+        document.getElementById("s7").innerHTML="";
+    document.getElementById("s8").innerHTML="";
+    document.getElementById("s9").innerHTML="";
+    document.getElementById("s10").innerHTML="";
+        document.getElementById("s11").innerHTML="";
+        document.getElementById("s12").innerHTML="";
 		document.getElementById("s1").innerHTML=corpus3;
         document.getElementById("s2").innerHTML="Enter the number of tokens and types for the above corpus:"
 	document.getElementById("s3").innerHTML="<table border='1' ><tr><td>Tokens</td><td><input type ='number' id='token'></td></tr><tr><td>Types</td><td><input type ='number' id='type'></td></tr></table>";
@@ -51,6 +77,20 @@ function showCorpus(){
         document.getElementById("s4").innerHTML="<button  onclick='check()'>Submit</button>";
     para=corpus[2];
 		
+           }
+    else if(selection.value ==='null'){
+        document.getElementById("s1").innerHTML="";
+        document.getElementById("s2").innerHTML="";
+        document.getElementById("s3").innerHTML="";
+         document.getElementById("s4").innerHTML="";
+        document.getElementById("s5").innerHTML="";
+        document.getElementById("s6").innerHTML="";
+        document.getElementById("s7").innerHTML="";
+    document.getElementById("s8").innerHTML="";
+    document.getElementById("s9").innerHTML="";
+    document.getElementById("s10").innerHTML="";
+        document.getElementById("s11").innerHTML="";
+        document.getElementById("s12").innerHTML="";
 	}
 }
 
@@ -70,15 +110,28 @@ function c(){
 
 function newtypes(){
     var str =para;
+
+  // to get coorect answer
+    var u = new Set(["of","the","to","up","can","than","did","me","you","off","does","very"])
+
 str=str.replace(/[^a-zA-Z ]/g, "");
     str= str.toLowerCase();
 	str = str.split(" ");
 	var s=[];
-	for(var i=0; i<str.length;i++){
+          var j=0;
+	for(var i=0; i<str.length-1;i++){
+                   
+                if(u.has(str[i])){
+                        continue;
+                }
+             else
+                {
 		stemmer.setCurrent(str[i]);     
 		stemmer.stem();
 		s[i] = stemmer.getCurrent();
-	}
+                     j++;
+        }
+}
     
     s = new Set(s);
 	s = Array.from(s);
@@ -88,13 +141,16 @@ str=str.replace(/[^a-zA-Z ]/g, "");
 
     //comparisons
     
-    if(val == s.length){
+    if(val == s.length)
+{
+
       //displaying answer
         document.getElementById("s12").innerHTML = "<center><font color='Green' style = 'font-size:20px'>Right answer</font></center>"
          document.getElementById("newtype").style.backgroundColor =  "Green"
         
     }
-    else{
+    else
+{
 
     //displaying answer
 
