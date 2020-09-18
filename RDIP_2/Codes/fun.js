@@ -23,7 +23,7 @@ var subheading = document.getElementById('subheading');
 var description = document.getElementById('description');
 var langcontent = document.getElementById('langcontent');
 var contenttable = document.getElementById('contenttable');
-var submit = document.getElementById('submit');
+var submit = document.getElementById('submitbtn');
 var x;
 
 function clearfields() {
@@ -69,7 +69,7 @@ function createtable(corpusstring) {
       rows +=
         '<tr><td>' +
         corpusS1[i] +
-        "</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+        "</td><td><select><option value = 'Noun' selected></option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
     }
   } 
 else if (x == 'hindi')
@@ -79,13 +79,14 @@ else if (x == 'hindi')
       rows +=
         '<tr><td>' +
         corpusS1[i] +
-        "</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
+        "</td><td><select><option value = 'Noun' selected></option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Postposition'>Postposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
     }
   }
   contenttable.innerHTML =
     '<center><table><tr><th>LEXICON</th><th>POS</th><th></th><th></th></tr><tr></td></tr>' +
     rows +
     '</table></center>';
+   submit.innerHTML = "<center><br><button id='submit'>Submit</button></center>";
 }
 
 function showcontent(id) 
@@ -156,6 +157,7 @@ function dropdownchange() {
   if (x == 'hindi') 
 {
    contenttable.innerHTML = '';
+   submit.innerHTML= = '';
     langcontent.innerHTML =
        "<center><select id='hin' onchange = 'showcontent(this.id)'><option value='hinselect'>---Select a sentence---</option><option value='hindi1'>" +
       corpus[1][0] +
