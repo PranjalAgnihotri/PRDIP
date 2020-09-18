@@ -71,7 +71,9 @@ function createtable(corpusstring) {
         corpusS1[i] +
         "</td><td><select><option value = 'Noun'>Noun</option><option value = 'Pronoun'>Pronoun</option><option value = 'Verb'>Verb</option><option value = 'Adjective'>Adjective</option><option value = 'Adverb'>Adverb</option><option value = 'Determiner'>Determiner</option><option value = 'Preposition'>Preposition</option><option value = 'Conjunction'>Conjunction</option><option value = 'Interjection'>Interjection</option></select></td><td></td><td></td></tr>";
     }
-  } else if (x == 'hindi') {
+  } 
+else if (x == 'hindi')
+ {
     rows = '';
     for (i = 0; i < corpusS1.length; i++) {
       rows +=
@@ -86,7 +88,8 @@ function createtable(corpusstring) {
     '</table></center>';
 }
 
-function showcontent(id) {
+function showcontent(id) 
+{
   contenttable.innerHTML =
     "<center><br><i><font color='Blue'>Select the POS tag for corresponding words</font></i><br></center>";
   var sentence = '';
@@ -150,7 +153,8 @@ function dropdownchange() {
       corpus[0][4] +
       '</option></select></center>';
   }
-  if (x == 'hindi') {
+  if (x == 'hindi') 
+{
    contenttable.innerHTML = '';
     langcontent.innerHTML =
        "<center><select id='hin' onchange = 'showcontent(this.id)'><option value='hinselect'>---Select a sentence---</option><option value='hindi1'>" +
